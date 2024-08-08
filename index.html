@@ -209,8 +209,8 @@
         // Function to add a marker at a specific point on the map
         const instructions = [
             { title: "Current Time", info: "6:45 PM" },
-            { title: "Address of Origin", info: "1505 W Hollywood Ave, Chicago, IL 60660" },
-            { title: "Address of Destination", info: "402 Richards St, Joliet, IL 60433" },
+            { title: "Address of Origin", info: "5009 N Northwest Hwy, Chicago, IL 60630" },
+            { title: "Address of Destination", info: "16230 Sunset Ln, Lockport, IL 60441" },
             { title: "Distance of Destination", info: "0" },
             { title: "Estimated Time to Destination", info: "0" },
             { title: "State of Charge of Battery", info: "42% Charge" },
@@ -255,9 +255,9 @@
                 parkingFee: 'payed',
                 parkingFeeRate: 'for some amount of time',
 
-                coffee: 'Yes <br><br> There is a coffee shop in walking distance... 0 miles',
-                grocery: 'Yes <br><br> There is a grocery store in walking distance... 0 miles',
-                sportsClothes: 'Yes <br><br> There is a sports or clothing store in walking distance... 0 miles',
+                coffee: 'Yes <br><br> There is a coffee shop in walking distance... 0.01 miles',
+                grocery: 'No <br><br> There are no grocery stores in walking distance',
+                sportsClothes: 'No <br><br> There are no sports or clothing stores in walking distance',
                 
                 rating: '',
                 ratingNum: '0'
@@ -294,9 +294,9 @@
                 parkingFee: 'payed',
                 parkingFeeRate: 'for some amount of time',
 
-                coffee: 'No <br><br> There is a coffee shop in walking distance... 0 miles',
-                grocery: 'No <br><br> There is a grocery store in walking distance... 0 miles',
-                sportsClothes: 'No <br><br> There is a sports or clothing store in walking distance... 0 miles',
+                coffee: 'Yes <br><br> There is a coffee shop in walking distance... 0.01 miles',
+                grocery: 'Yes <br><br> There is a grocery store in walking distance... 0.3 miles',
+                sportsClothes: 'No <br><br> There is a sports or clothing store in walking distance... 0.7 miles',
                 
                 rating: '',
                 ratingNum: '0'
@@ -880,7 +880,7 @@
                         },
                         geometry: {
                             type: 'Point',
-                            coordinates: [-87.66759974512303,41.98523144467106]
+                            coordinates: [-87.76297503173643,41.97199753080636]
                         }
                     }
                 ]
@@ -899,7 +899,7 @@
                         },
                         geometry: {
                             type: 'Point',
-                            coordinates: [-88.0734332247139,41.516412863202504]
+                            coordinates: [-88.01402944129183,41.62876830643597]
                         }
                     }
                 ]
@@ -922,7 +922,7 @@
                 logData(`Map Clicked`, null, null, clickCoords, mapNum);
                 console.log(`Map clicked at: ${clickCoords}`);
 
-                const bufferRadius = 0.8; // Buffer radius in kilometers
+                const bufferRadius = 1.8; // Buffer radius in kilometers
 
                 if(!checkBufferZone(clickCoords, chargingStations[0].coordinates, bufferRadius) && !checkBufferZone(clickCoords, chargingStations[1].coordinates, bufferRadius)) {
                     removeRoutes();
